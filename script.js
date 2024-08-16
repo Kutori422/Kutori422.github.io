@@ -5,6 +5,9 @@ document.getElementById('heart').addEventListener('click', function() {
     const messageElement = document.getElementById('birthday-message');
     messageDiv.classList.remove('hidden');
 
+    // Change the background to white
+    document.body.classList.add('white-background');
+
     const message = "Happy Birthday! 🎉";
     let index = 0;
 
