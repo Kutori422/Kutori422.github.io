@@ -20,6 +20,13 @@ body {
     width: 90%; /* Ajusta el ancho para que se adapte a la pantalla */
     max-width: 1000px; /* Ajusta el ancho máximo si es necesario */
     box-sizing: border-box;
+    height: 100%; /* Asegura que el contenedor se ajuste al contenido */
+
+}
+
+#message{
+    height: 100%; /* Asegura que el contenedor se ajuste al contenido */
+
 }
 
 .hidden {
@@ -141,7 +148,7 @@ body {
 /* Styling for Messages and Image */
 #long-message {
     color: #4a4a4a;
-    font-size: 2em;
+    font-size: 4vw;
     font-family: 'Kalam', cursive; /* Usa Kalam para el texto largo */
     display: block;
     margin: 0 auto;
@@ -154,7 +161,7 @@ body {
 
 #birthday-message, #additional-message {
     color: #4a4a4a;
-    font-size: 2em;
+    font-size: 4vw;
     font-family: 'Pacifico', cursive; /* Usa Pacifico para los mensajes de cumpleaños y adicionales */
     display: block;
     margin: 0 auto;
@@ -176,41 +183,48 @@ body {
     height: auto;
 }
 
+@media (min-width: 1024px) {
+    #long-message, #birthday-message, #additional-message {
+        font-size: 2vw; /* Ajusta el tamaño de fuente para pantallas grandes */
+    }
+}
+
+
 /* Responsive Styles */
 @media (max-width: 768px) {
     #message {
-        height: auto;
+        height: 100%; /* Asegura que el contenedor se ajuste al contenido */
     }
     .center {
-        height: auto;
+        height: 100%; /* Asegura que el contenedor se ajuste al contenido */
         top: 100%;
     }
 
     #long-message, #birthday-message, #additional-message {
-        font-size: 1.5em;
+        font-size: 5vw;
     }
 
     #cupcake-image {
-        width: 100%; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
+        width: auto; /* Ajusta el tamaño de la imagen para que se ajuste al contenedor */
         height: auto;
     }
 }
 
 @media (max-width: 480px) {
     #message {
-        height: auto;
+        height: 100%; /* Asegura que el contenedor se ajuste al contenido */
     }
     .center {
-        height: auto;
-        top: 100%;
+        height: 100%; /* Asegura que el contenedor se ajuste al contenido */
+        top: 50%;
     }
 
     #long-message, #birthday-message, #additional-message {
-        font-size: 1.2em;
+        font-size: 6vw;
     }
 
     #cupcake-image {
-        width: 100%; /* Asegura que la imagen se ajuste al tamaño de la pantalla */
+        width: auto; /* Asegura que la imagen se ajuste al tamaño de la pantalla */
         height: auto;
     }
 }
