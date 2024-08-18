@@ -12,7 +12,7 @@ document.getElementById('heart').addEventListener('click', function() {
     document.body.classList.add('white-background');
 
     // Display the birthday message with typing and tilt animations
-    birthdayMessageElement.innerHTML = "Happy Birthday! 🎉";
+    birthdayMessageElement.innerHTML = "Happy Birthday TOKO! 🎉";
     birthdayMessageElement.classList.remove('hidden');
     birthdayMessageElement.classList.add('typing');
 
@@ -27,7 +27,7 @@ document.getElementById('heart').addEventListener('click', function() {
 
             // Display the long message with fade-in animation
             setTimeout(() => {
-                longMessageElement.innerHTML = "I want you to know how much you mean to me. I love you more than words can express, and I'm here for you always. I hope your special day is filled with joy, laughter, and all the love in the world!";
+                longMessageElement.innerHTML = "Happy Birthday, baby! 🎉🎂 I hope your special day is filled with joy, laughter, and all the love in the world. 💕 I want you to know how much you mean to me. I love you more than words can express, and I’m here for you always. 😘❤️";
                 longMessageElement.classList.remove('hidden');
                 longMessageElement.classList.add('fade-in');
 
@@ -43,8 +43,8 @@ document.getElementById('heart').addEventListener('click', function() {
                     }, 2000); // Adjust delay to match the typing duration
 
                 }, 2000); // Delay to match the fade-in duration of the long message
-            }, 1000); // Delay to match the appearance of the cupcake image
-        }, 1000); // Delay to allow the tilt animation to complete
+            }, 100); // Delay to match the appearance of the cupcake image
+        }, 100); // Delay to allow the tilt animation to complete
     }, 2000); // Delay to allow the typing animation to complete
 
     startConfetti(); // Start confetti animation
