@@ -22,7 +22,6 @@ body {
     box-sizing: border-box;
 }
 
-
 .hidden {
     display: none;
 }
@@ -140,10 +139,23 @@ body {
 }
 
 /* Styling for Messages and Image */
-#long-message, #birthday-message, #additional-message {
+#long-message {
     color: #4a4a4a;
     font-size: 2em;
-    font-family: 'Pacifico', cursive;
+    font-family: 'Kalam', cursive; /* Usa Kalam para el texto largo */
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: 100%; /* Asegura que el contenido no se desborde */
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Añadido aquí para el mensaje largo */
+}
+
+#birthday-message, #additional-message {
+    color: #4a4a4a;
+    font-size: 2em;
+    font-family: 'Pacifico', cursive; /* Usa Pacifico para los mensajes de cumpleaños y adicionales */
     display: block;
     margin: 0 auto;
     padding: 0 10px;
@@ -152,12 +164,8 @@ body {
     box-sizing: border-box;
 }
 
-#long-message {
-    margin-bottom: 10px;
-}
-
 #additional-message {
-    margin-top: 10px;
+    margin-top: 10px; /* Añadido aquí para el mensaje adicional */
 }
 
 /* Cupcake Image */
@@ -170,14 +178,13 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-   #message {
-    height: auto;
-   }
-   .center{
-    height: auto;
-    top: 100%;
-
-   }
+    #message {
+        height: auto;
+    }
+    .center {
+        height: auto;
+        top: 100%;
+    }
 
     #long-message, #birthday-message, #additional-message {
         font-size: 1.5em;
@@ -192,12 +199,11 @@ body {
 @media (max-width: 480px) {
     #message {
         height: auto;
-       }
-       .center{
+    }
+    .center {
         height: auto;
         top: 100%;
-
-       }
+    }
 
     #long-message, #birthday-message, #additional-message {
         font-size: 1.2em;
