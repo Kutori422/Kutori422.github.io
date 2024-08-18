@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background: #65001f;
+    background: #1f1f1f; /* Cambiado a un gris oscuro */
     font-family: Arial, sans-serif;
 }
 
@@ -25,6 +25,7 @@ body {
 
 /* Heart Animation */
 .heart {
+    position: relative; /* Añadido para posicionar el efecto de resplandor */
     animation: pulse 0.5s infinite;
     cursor: pointer;
 }
@@ -33,6 +34,7 @@ body {
     position: relative;
     width: 200px;
     height: 160px;
+    z-index: 1; /* Asegura que el corazón esté sobre el resplandor */
 }
 
 .shape:before, .shape:after {
@@ -42,7 +44,7 @@ body {
     top: 0;
     width: 100px;
     height: 160px;
-    background: #fc2e5a;
+    background: #f50b3e;
     border-radius: 50px 50px 0 0;
     transform: rotate(-45deg);
     transform-origin: 0 100%;
@@ -59,7 +61,22 @@ body {
     50% { transform: scale(1.1); }
 }
 
-/* Text Animations */
+/* Glow Effect */
+.heart::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 250px; /* Tamaño del resplandor */
+    height: 250px; /* Tamaño del resplandor */
+    background: rgba(192, 52, 52, 0.6); /* Rojo intenso con opacidad */
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(30px); /* Efecto de difuminado */
+    z-index: -1; /* Coloca el resplandor detrás del corazón */
+}
+
+/* Text and Image Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -82,48 +99,69 @@ body {
     to { width: 100%; }
 }
 
+@keyframes scaleUp {
+    from {
+        transform: scale(0.5); /* Start smaller */
+        opacity: 0;
+    }
+    to {
+        transform: scale(1); /* Full size */
+        opacity: 1;
+    }
+}
+
 .fade-in {
-    animation: fadeIn 2s ease-out; /* Increased duration for more noticeable appearance */
+    animation: fadeIn 2s ease-out;
 }
 
 .tilt {
-    animation: tilt 1s infinite; /* Adjust the duration as needed */
+    animation: tilt 1s infinite;
 }
 
 .typing {
-    animation: typing 2s steps(30, end), fadeIn 2s ease-out; /* Typing animation followed by fade-in */
+    animation: typing 2s steps(30, end);
     white-space: nowrap;
     overflow: hidden;
     border-right: 0.15em solid #4a4a4a; /* Cursor effect */
 }
 
-/* Styling for Messages */
+.scale-up {
+    animation: scaleUp 1.5s ease-out;
+}
+
+/* Styling for Messages and Image */
 #long-message {
-    color: #4a4a4a; /* Dark gray */
+    color: #4a4a4a;
     font-size: 2em;
     font-family: 'Pacifico', cursive;
-    display: block; /* Adjust width to fit content */
-    margin: 0 auto; /* Center horizontally */
-    padding: 0 10px; /* Add horizontal padding for margins */
-    max-width: calc(100% - 40px); /* Limit maximum width while maintaining margins */
-    overflow-wrap: break-word; /* Ensure long words break to fit */
-    box-sizing: border-box; /* Include padding in width calculation */
+    display: block;
+    margin: 0 auto;
+    padding: 0 10px;
+    max-width: calc(100% - 40px);
+    overflow-wrap: break-word;
+    box-sizing: border-box;
 }
 
 #birthday-message, #additional-message {
-    color: #4a4a4a; /* Dark gray */
+    color: #4a4a4a;
     font-size: 2em;
     font-family: 'Pacifico', cursive;
     margin: 0 auto;
-    width: 90%; /* Adjust to fit the text within the container */
-    max-width: 800px; /* Limit the maximum width */
-    overflow-wrap: break-word; /* Ensure long words break to fit */
+    width: 90%;
+    max-width: 800px;
+    overflow-wrap: break-word;
 }
 
 #long-message {
-    margin-bottom: 10px; /* Space between the long message and the birthday message */
+    margin-bottom: 10px;
 }
 
 #additional-message {
-    margin-top: 10px; /* Space between the cupcake image and the additional message */
+    margin-top: 10px;
+}
+
+/* Cupcake Image */
+#cupcake-image {
+    width: 512px; /* Smaller size */
+    margin: 20px auto; /* Center with margin */
 }
