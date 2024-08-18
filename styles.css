@@ -12,6 +12,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+    width: 90%;
+    max-width: 600px;
+    padding: 0 10px;
 }
 
 .hidden {
@@ -25,40 +28,18 @@ body {
 
 /* Heart Animation */
 .heart {
-    position: relative; /* Añadido para posicionar el efecto de resplandor */
+    position: relative;
     animation: pulse 0.5s infinite;
     cursor: pointer;
+    width: 20vw;
+    height: auto;
 }
 
 .shape {
     position: relative;
-    width: 200px;
-    height: 160px;
-    z-index: 1; /* Asegura que el corazón esté sobre el resplandor */
-}
-
-.shape:before, .shape:after {
-    position: absolute;
-    content: "";
-    left: 100px;
-    top: 0;
-    width: 100px;
-    height: 160px;
-    background: #f50b3e;
-    border-radius: 50px 50px 0 0;
-    transform: rotate(-45deg);
-    transform-origin: 0 100%;
-}
-
-.shape:after {
-    left: 0;
-    transform: rotate(45deg);
-    transform-origin: 100% 100%;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
+    width: 50%;
+    height: auto;
+    z-index: 1;
 }
 
 /* Glow Effect */
@@ -67,24 +48,24 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 250px; /* Tamaño del resplandor */
-    height: 250px; /* Tamaño del resplandor */
-    background: rgba(192, 52, 52, 0.6); /* Rojo intenso con opacidad */
+    width: 50vw;
+    height: 50vw;
+    background: rgba(192, 52, 52, 0.6);
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    filter: blur(30px); /* Efecto de difuminado */
-    z-index: -1; /* Coloca el resplandor detrás del corazón */
+    filter: blur(30px);
+    z-index: -1;
 }
 
 /* Text and Image Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Adds a slight upward movement */
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
-        transform: translateY(0); /* Text returns to its original position */
+        transform: translateY(0);
     }
 }
 
@@ -101,11 +82,11 @@ body {
 
 @keyframes scaleUp {
     from {
-        transform: scale(0.5); /* Start smaller */
+        transform: scale(0.5);
         opacity: 0;
     }
     to {
-        transform: scale(1); /* Full size */
+        transform: scale(1);
         opacity: 1;
     }
 }
@@ -122,7 +103,7 @@ body {
     animation: typing 2s steps(30, end);
     white-space: nowrap;
     overflow: hidden;
-    border-right: 0.15em solid #4a4a4a; /* Cursor effect */
+    border-right: 0.15em solid #4a4a4a;
 }
 
 .scale-up {
@@ -132,19 +113,19 @@ body {
 /* Styling for Messages and Image */
 #long-message {
     color: #4a4a4a;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'Pacifico', cursive;
     display: block;
     margin: 0 auto;
     padding: 0 10px;
-    max-width: calc(100% - 40px);
+    max-width: calc(100% - 20px);
     overflow-wrap: break-word;
     box-sizing: border-box;
 }
 
 #birthday-message, #additional-message {
     color: #4a4a4a;
-    font-size: 2em;
+    font-size: 1.5em;
     font-family: 'Pacifico', cursive;
     margin: 0 auto;
     width: 90%;
@@ -162,6 +143,17 @@ body {
 
 /* Cupcake Image */
 #cupcake-image {
-    width: 512px; /* Smaller size */
-    margin: 20px auto; /* Center with margin */
+    width: 80%;
+    margin: 20px auto;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    #birthday-message, #long-message, #additional-message {
+        font-size: 1.2em;
+    }
+
+    #cupcake-image {
+        width: 80%;
+    }
 }
